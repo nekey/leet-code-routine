@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "leet-code-routine"
+version = "0.1.0"
+description = ""
+authors = ["Nikolay Nezhevenko <nekey975@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[virtualenvs]
+in-project = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
