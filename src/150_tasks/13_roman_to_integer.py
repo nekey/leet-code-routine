@@ -17,13 +17,14 @@ ROMAN_SUBS_MAP = {
     "C": "DM",
 }
 
+
 class Solution:
     def romanToInt(self, s: str) -> int:
         result = 0
         i = 0
         while i < len(s):
-            if (i < (len(s) - 1)) and (s[i] in ROMAN_SUBS_MAP) and (s[i+1] in ROMAN_SUBS_MAP[s[i]]):
-                result += ROMAN_2_INT_MAP[s[i+1]] - ROMAN_2_INT_MAP[s[i]]
+            if (i < (len(s) - 1)) and (s[i] in ROMAN_SUBS_MAP) and (s[i + 1] in ROMAN_SUBS_MAP[s[i]]):
+                result += ROMAN_2_INT_MAP[s[i + 1]] - ROMAN_2_INT_MAP[s[i]]
                 i += 2
             else:
                 result += ROMAN_2_INT_MAP[s[i]]

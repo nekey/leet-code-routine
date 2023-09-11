@@ -2,11 +2,13 @@
 Link to task: https://leetcode.com/problems/is-subsequence/?envType=study-plan-v2&envId=top-interview-150
 """
 
+
 class SolutionOld:
-    """Good solution, but not enough speed(beats 35%)
-    """
+    """Good solution, but not enough speed(beats 35%)"""
+
     def isSubsequence(self, s: str, t: str) -> bool:
-        if not s: return True
+        if not s:
+            return True
         s_iter = iter(s)  # iterator object
         s_last_ch = next(s_iter)  # first char in s
         for ch in t:
@@ -25,7 +27,7 @@ class Solution:
             if t[p_t] == s[p_s]:
                 p_s += 1
             p_t += 1
-        return (p_s == len(s))
+        return p_s == len(s)
 
 
 def check_result(s: str, t: str, expected: bool) -> None:

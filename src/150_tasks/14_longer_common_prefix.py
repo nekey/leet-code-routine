@@ -1,11 +1,10 @@
 """
 Link to task: https://leetcode.com/problems/longest-common-prefix/?envType=study-plan-v2&envId=top-interview-150
 """
-from typing import List
 
 
 class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> str:
+    def longestCommonPrefix(self, strs: list[str]) -> str:
         if len(strs) == 1:
             return strs[0]
 
@@ -23,7 +22,7 @@ def check_result(strs, expected):
 
 
 def test_longest_common_prefix():
-    check_result(strs=["flower","flow","flight"], expected="fl")
-    check_result(strs=["dog","racecar","car"], expected="")
+    check_result(strs=["flower", "flow", "flight"], expected="fl")
+    check_result(strs=["dog", "racecar", "car"], expected="")
     check_result(strs=["test", "test"], expected="test")
     check_result(strs=["test"], expected="test")

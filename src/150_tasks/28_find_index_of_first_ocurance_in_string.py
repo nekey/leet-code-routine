@@ -1,6 +1,7 @@
 """
-Link to task: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=study-plan-v2&envId=top-interview-150
+Link to task: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=study-plan-v2
 """
+
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -8,6 +9,7 @@ class Solution:
             return haystack.index(needle)
         except ValueError:
             return -1
+
 
 def check_result(haystack, needle, expected_idx):
     assert Solution().strStr(haystack, needle) == expected_idx

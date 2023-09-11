@@ -1,13 +1,11 @@
 """
 Link to task: https://leetcode.com/problems/h-index/?envType=study-plan-v2&envId=top-interview-150
 """
-import itertools
 from collections import Counter
-from typing import List
 
 
 class Solution:
-    def hIndex_1(self, citations: List[int]) -> int:
+    def hIndex_1(self, citations: list[int]) -> int:
         # create counter with hack. citations, that > len(citations) counted with len(citations) value
         c = Counter()
         for citation in citations:
@@ -28,14 +26,12 @@ class Solution:
                 checked_citations += c[citation_value]
         return 0
 
-    def hIndex(self, citations: List[int]) -> int:
+    def hIndex(self, citations: list[int]) -> int:
         # try same with "counter sort" optimisation
-        for idx, citation in enumerate(sorted(citations,reverse=True)):
+        for idx, citation in enumerate(sorted(citations, reverse=True)):
             if idx + 1 > citation:
                 return idx
         return len(citations)
-
-
 
 
 def check_result(citations, expected_h_index):
@@ -44,10 +40,9 @@ def check_result(citations, expected_h_index):
 
 
 def test_h_index():
-    check_result(citations=[3,0,6,1,5], expected_h_index=3)
-    check_result(citations=[1,3,1], expected_h_index=1)
-    check_result(citations=[2,1,1,2,2,1], expected_h_index=2)
+    check_result(citations=[3, 0, 6, 1, 5], expected_h_index=3)
+    check_result(citations=[1, 3, 1], expected_h_index=1)
+    check_result(citations=[2, 1, 1, 2, 2, 1], expected_h_index=2)
     check_result(citations=[7], expected_h_index=1)
-    check_result(citations=[100,100,0], expected_h_index=2)
+    check_result(citations=[100, 100, 0], expected_h_index=2)
     check_result(citations=[0, 0], expected_h_index=0)
-

@@ -2,13 +2,14 @@
 Link to task: https://leetcode.com/problems/length-of-last-word/?envType=study-plan-v2&envId=top-interview-150
 """
 
+
 class Solution:
     def lengthOfLastWord_1(self, s: str) -> int:
         left = None
         for idx, ch in enumerate(reversed(s)):
-            if ch != ' ' and left is None:
+            if ch != " " and left is None:
                 left = idx
-            if ch == ' ' and left is not None:
+            if ch == " " and left is not None:
                 return idx - left
         return len(s) - left
 

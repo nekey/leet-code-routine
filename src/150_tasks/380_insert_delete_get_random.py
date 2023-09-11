@@ -2,13 +2,11 @@
 Link to task: https://leetcode.com/problems/insert-delete-getrandom-o1/?envType=study-plan-v2&envId=top-interview-150
 """
 import random
-from typing import Set
 
 
 class RandomizedSet1:
-
     def __init__(self):
-        self._storage: Set[int] = set()
+        self._storage: set[int] = set()
 
     def insert(self, val: int) -> bool:
         if val in self._storage:
@@ -29,7 +27,6 @@ class RandomizedSet1:
 
 
 class RandomizedSet:
-
     def __init__(self):
         self._storage_map: dict = {}
         self._storage_data: list = []
@@ -57,6 +54,7 @@ class RandomizedSet:
     def getRandom(self) -> int:
         return random.choice(self._storage_data)
 
+
 def test_check_randomised_set():
     # RandomizedSet randomizedSet = new RandomizedSet();
     randomised_set = RandomizedSet()
@@ -67,7 +65,7 @@ def test_check_randomised_set():
     # randomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].
     assert randomised_set.insert(2)
     # randomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.
-    assert randomised_set.getRandom() in [1,2]
+    assert randomised_set.getRandom() in [1, 2]
     # randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
     assert randomised_set.remove(1)
     # randomizedSet.insert(2); // 2 was already in the set, so return false.
