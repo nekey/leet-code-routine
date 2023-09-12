@@ -64,4 +64,6 @@ repos:
             "flake8-logging-format",
             "flake8-pytest-style",
           ]
-        args: [--max-line-length=120]
+        args:
+          - --max-line-length=120
+          - --ignore=E203,W503
